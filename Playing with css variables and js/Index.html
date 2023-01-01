@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+    :root{
+        --base:#ffc600;
+        --spacing: 10px;
+        --blur: 10px;
+    }
+    img{
+        padding: var(--spacing);
+        background: var(--base);
+        filter: blur(var(--blur));
+    }
+    .h1{
+        color: var(--base);
+    }
+    body{
+        text-align: center;
+    }
+    body{
+        background-color: #193549;
+        color: white;
+        font-family: 'helvetic neue', sans-serif;
+        font-weight: 100;
+        font-size: 50px;
+    }
+    .contorls{
+        margin-bottom: 50px;
+    }
+    a{
+        color: var(--base);
+        text-decoration: none;
+    }
+    input{
+        width: 100px;
+    }
+</style>
+</head>
+<body>
+    <h2>Update CSS Variables width<span class="h1">JS</span></h2>
+    <div class="control">
+        <label for="spacing">Spacing:</label>
+        <input type="range" name="spacing" min="10" max="200" value="10" data-sizing="px">
+
+        <label for="blur">Blur:</label>
+        <input type="range" name="blur" min="0" max="25" value="10" data-sizing="px">
+
+        <label for="Base">BaseColor:</label>
+        <input type="color" name="Base" value="#ffc600">
+    </div>
+    <img src="photo.jpg">
+</body>
+<script>
+    const inputs=document.querySelectorAll('.control input');
+
+    function handleUpdate(){
+        console.log(this.value);
+    }
+
+   inputs.forEach(input => input.addEventListener('change', handleUpdate));
+</script>
+</html>
